@@ -17,7 +17,8 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'liste-produit', loadChildren: './liste-produit/liste-produit.module#ListeProduitPageModule' },
-  { path: 'camera', loadChildren: './camera/camera.module#CameraPageModule' }
+  { path: 'camera', loadChildren: './camera/camera.module#CameraPageModule' },
+  { path: 'geolocalisation', loadChildren: './geolocalisation/geolocalisation.module#GeolocalisationPageModule' }
 ];
 
 @NgModule({

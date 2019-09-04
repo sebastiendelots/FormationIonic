@@ -32,6 +32,11 @@ export class AppComponent {
       icon: 'camera'
     },
     {
+      title: 'Geolocalisation',
+      url: '/geolocalisation',
+      icon: 'map'
+    },
+    {
       title: 'Log out',
       url: '/login',
       icon: 'exit'
