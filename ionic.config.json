@@ -1,0 +1,7 @@
+{
+  "name": "annonceNC",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
