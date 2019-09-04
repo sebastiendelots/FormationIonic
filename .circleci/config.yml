@@ -46,5 +46,5 @@ jobs:
 version: 2
 workflows: 
   build_and_deploy: 
-    jobs: 
+    jobs:
   version: 2
