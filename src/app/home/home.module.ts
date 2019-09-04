@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { SignaturePadModule } from 'angular2-signaturepad';
 
 import { HomePage } from './home.page';
-import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   imports: [
@@ -22,6 +21,6 @@ import { Camera } from '@ionic-native/camera/ngx';
     ])
   ],
   declarations: [HomePage],
-  providers: [Camera]
+  providers: []
 })
 export class HomePageModule {}

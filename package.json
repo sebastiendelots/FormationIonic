@@ -1,5 +1,5 @@
 {
-  "name": "annonceNC",
+  "name": "annonce-nc",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -16,6 +16,7 @@
     "@angular/common": "~8.1.2",
     "@angular/compiler": "~8.1.2",
     "@angular/core": "~8.1.2",
+    "@angular/fire": "^5.2.1",
     "@angular/forms": "~8.1.2",
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
@@ -33,6 +34,7 @@
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-geolocation": "^4.0.2",
     "core-js": "^2.5.4",
+    "firebase": "^6.5.0",
     "ou": "^0.0.2",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.5.1",
