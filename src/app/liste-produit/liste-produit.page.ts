@@ -21,7 +21,7 @@ export class ListeProduitPage implements OnInit {
       icon: "boat"
     },
     {
-      libelle: "informatique",
+      libelle: "Toutes",
       icon: "wifi"
     }
   ]
@@ -36,8 +36,8 @@ export class ListeProduitPage implements OnInit {
       categorie: "sports"
     },
     {
-      produit : "ordinateur",
-      categorie: "informatique"
+      produit : "short",
+      categorie: "sports"
     },
     {
       produit : "moteur",
@@ -53,9 +53,15 @@ export class ListeProduitPage implements OnInit {
     }
   ]
 
+  categorieToDisplay = "Toutes";
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showCategorie(categorie: string) {
+    this.categorieToDisplay = categorie;
   }
 
 }
