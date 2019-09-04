@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Camera</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="image">
+    <ion-img [src]="image"></ion-img>
+  </div>
+  <ion-button color="primary" (click)="takePhoto()" expand="block">Take</ion-button>
+
+  <div>{{bareCode}}</div>
+  <ion-button color="secondary" (click)="scan()" expand="block">Scan</ion-button>
+</ion-content>

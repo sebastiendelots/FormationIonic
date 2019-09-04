@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,6 @@ export class HomePage {
 
   @ViewChild(SignaturePad, null) signaturePad: SignaturePad;
 
-  image;
   signature;
  
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
@@ -20,14 +18,7 @@ export class HomePage {
     'canvasHeight': 300
   };
 
-  options: CameraOptions = {
-    quality: 100,
-    destinationType: this.camera.DestinationType.FILE_URI,
-    encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE
-  }
-
-  constructor(private camera: Camera) {}
+  constructor() {}
 
   ngAfterViewInit() {
     // this.signaturePad is now available
@@ -48,16 +39,6 @@ export class HomePage {
 
   save() {
     this.signature =this.signaturePad.toDataURL();
-
-    this.camera.getPicture(this.options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.image = base64Image;
-      alert(this.image);
-     }, (err) => {
-      // Handle error
-     });
   }
 
   clear() {

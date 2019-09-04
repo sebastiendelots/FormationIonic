@@ -22,14 +22,19 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'Login',
-      url: '/login',
-      icon: 'paper-plane'
-    },
-    {
       title: 'Liste Produit',
       url: '/liste-produit',
       icon: 'build'
+    },
+    {
+      title: 'Camera',
+      url: '/camera',
+      icon: 'camera'
+    },
+    {
+      title: 'Log out',
+      url: '/login',
+      icon: 'exit'
     },
   ];
 
