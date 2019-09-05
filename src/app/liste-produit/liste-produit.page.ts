@@ -9,8 +9,6 @@ import { Produit } from '../model/produit';
 })
 export class ListeProduitPage implements OnInit {
 
-  identifiant = 0;
-
   listCategorie = [
     {
       libelle: "sports",
