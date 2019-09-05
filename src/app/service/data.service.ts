@@ -16,6 +16,7 @@ export class DataService {
   }
 
   postProduit(produit: Produit): Observable<Produit> {
+    console.log(produit);
     return this.http.post<Produit>(this.baseUrl + "/produit", produit);
   }
 

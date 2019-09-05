@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
+import { Produit } from '../model/produit';
 
 @Component({
   selector: 'app-liste-produit',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./liste-produit.page.scss'],
 })
 export class ListeProduitPage implements OnInit {
+
+  identifiant = 0;
 
   listCategorie = [
     {
@@ -55,13 +59,29 @@ export class ListeProduitPage implements OnInit {
 
   categorieToDisplay = "Toutes";
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
 
   showCategorie(categorie: string) {
     this.categorieToDisplay = categorie;
+
+    const produit = new Produit();
+    produit.categorie = "test";
+    produit.nom = "test";
+    produit.id = this.identifiant;
+    this.identifiant ++;
+    this.dataService.postProduit(produit).subscribe();
+  }
+
+  addProduit() {
+    const produit = new Produit();
+    produit.categorie = "test";
+    produit.nom = "test";
+    produit.id = this.identifiant;
+    this.identifiant ++;
+    this.dataService.postProduit(produit).subscribe();
   }
 
 }

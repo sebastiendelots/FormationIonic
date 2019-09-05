@@ -3,29 +3,11 @@ jobs:
   build: 
     docker: 
       - 
-        image: "circleci/android:api-28-node"
+        image: "retengr/opt-ionic"
     environment: 
       JVM_OPTS: "-Xmx3200m"
     steps: 
       - checkout
-      - 
-        run: 
-          command: |
-              wget https://services.gradle.org/distributions/gradle-4.0.2-bin.zip -P /tmp
-              sudo unzip -d /opt/gradle /tmp/gradle-*.zip
-              echo 'export GRADLE_HOME=/opt/gradle/gradle-4.0.2' >> $BASH_ENV
-              echo 'export PATH=$PATH:/opt/gradle/gradle-4.0.2/bin' >> $BASH_ENV
-              source $BASH_ENV
-          name: "Install gradle"
-      - 
-        run: 
-          command: "sudo npm install -g ionic cordova yarn\n"
-          name: "Install ionic and cordova"
-      - 
-        run: 
-          command: "yarn install\n"
-          name: "Install npm packages"
-      - 
         run: 
           command: |
               ionic cordova platform add android --noresources
