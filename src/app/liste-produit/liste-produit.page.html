@@ -14,12 +14,14 @@
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-avatar>
       <ion-label>{{item.produit}}</ion-label>
+      <ion-button (click)="addProduit(item)">Save</ion-button>
     </ion-item>
     <ion-item *ngIf="categorieToDisplay !== 'Toutes' && item.categorie === categorieToDisplay">
       <ion-avatar slot="start">
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-avatar>
       <ion-label>{{item.produit}}</ion-label>
+      <ion-button (click)="addProduit(item)">Save</ion-button>
     </ion-item>
   </ion-list>
 

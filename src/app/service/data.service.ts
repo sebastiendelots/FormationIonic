@@ -16,19 +16,14 @@ export class DataService {
   }
 
   postProduit(produit: Produit): Observable<Produit> {
-    console.log(produit);
-    return this.http.post<Produit>(this.baseUrl + "/produit", produit);
+    return this.http.post<Produit>(this.baseUrl + "produit.json", produit);
   }
 
   putProduit(produit: Produit) {
-    return this.http.put<Produit>(this.baseUrl + "/produit", produit);
+    return this.http.put<Produit>(this.baseUrl + "produit.json", produit);
   }
 
   getProduit(id: string) {
-    return this.http.get<Produit>(this.baseUrl + "/produit/" + id);
-  }
-
-  getAllProduit() {
-    return this.http.get<Produit>(this.baseUrl + "/produits");
+    return this.http.get<Produit>(this.baseUrl + "produit/" + id);
   }
 }

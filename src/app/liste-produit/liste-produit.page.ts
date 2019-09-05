@@ -66,19 +66,12 @@ export class ListeProduitPage implements OnInit {
 
   showCategorie(categorie: string) {
     this.categorieToDisplay = categorie;
-
-    const produit = new Produit();
-    produit.categorie = "test";
-    produit.nom = "test";
-    produit.id = this.identifiant;
-    this.identifiant ++;
-    this.dataService.postProduit(produit).subscribe();
   }
 
-  addProduit() {
+  addProduit(item: any) {
     const produit = new Produit();
-    produit.categorie = "test";
-    produit.nom = "test";
+    produit.categorie = item.categorie;
+    produit.nom = item.produit;
     produit.id = this.identifiant;
     this.identifiant ++;
     this.dataService.postProduit(produit).subscribe();
