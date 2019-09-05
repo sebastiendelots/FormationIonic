@@ -72,8 +72,6 @@ export class ListeProduitPage implements OnInit {
     const produit = new Produit();
     produit.categorie = item.categorie;
     produit.nom = item.produit;
-    produit.id = this.identifiant;
-    this.identifiant ++;
     this.dataService.postProduit(produit).subscribe();
   }
 
