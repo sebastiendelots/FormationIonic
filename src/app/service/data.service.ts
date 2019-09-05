@@ -9,11 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   baseUrl = "https://annonce-nc.firebaseio.com/";
-  monProduit;
 
-  constructor(private http: HttpClient) { 
-    this.monProduit = new Produit();
-  }
+  constructor(private http: HttpClient) { }
 
   postProduit(produit: Produit): Observable<Produit> {
     return this.http.post<Produit>(this.baseUrl + "produit.json", produit);
