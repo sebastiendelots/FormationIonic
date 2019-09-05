@@ -9,6 +9,7 @@ jobs:
       - checkout
       - run: 
           command: |
+              npm install
               ionic cordova platform add android --noresources
               ionic config set -g telemetry true
           name: "Install Cordova plugins and add android platform"
