@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { DataService } from '../service/data.service';
 import { Produit } from '../model/produit';
 
@@ -8,25 +8,6 @@ import { Produit } from '../model/produit';
   styleUrls: ['./liste-produit.page.scss'],
 })
 export class ListeProduitPage implements OnInit {
-
-  listCategorie = [
-    {
-      libelle: "sports",
-      icon: "basketball"
-    },
-    {
-      libelle: "bricolage",
-      icon: "build"
-    },
-    {
-      libelle: "bateau",
-      icon: "boat"
-    },
-    {
-      libelle: "Toutes",
-      icon: "wifi"
-    }
-  ]
 
   listProduit = [
     {
@@ -55,15 +36,12 @@ export class ListeProduitPage implements OnInit {
     }
   ]
 
-  categorieToDisplay = "Toutes";
+  @Output()  
+  categorieToDisplay: EventEmitter<String> = new EventEmitter()
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-  }
-
-  showCategorie(categorie: string) {
-    this.categorieToDisplay = categorie;
   }
 
   addProduit(item: any) {

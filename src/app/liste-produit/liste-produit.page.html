@@ -24,13 +24,4 @@
       <ion-button (click)="addProduit(item)">Save</ion-button>
     </ion-item>
   </ion-list>
-
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button *ngFor="let categorie of listCategorie" (click)="showCategorie(categorie.libelle)">
-        <ion-icon [name]="categorie.icon"></ion-icon>
-        <ion-label>{{categorie.libelle}}</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
 </ion-content>
