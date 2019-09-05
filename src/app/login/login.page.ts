@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
   async presentToast() {
     const toast = await this.toastController.create({
       message: 'Authentification failed !',
-      duration: 3000
+      duration: 2000
     });
     toast.present();
   }
