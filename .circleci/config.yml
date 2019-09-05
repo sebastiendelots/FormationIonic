@@ -18,8 +18,7 @@ jobs:
               mkdir -p /tmp/apk
               cp -r platforms/android/app/build/outputs/apk/debug/app-debug.apk /tmp/apk
           name: "Generate apk"
-      - 
-        store_artifacts: 
+      - store_artifacts: 
           destination: apks
           path: /tmp/apk
     working_directory: ~/repo
