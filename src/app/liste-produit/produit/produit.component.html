@@ -1,3 +1,24 @@
-<p>
-  produit works!
-</p>
+<ion-content>
+  <ion-card>
+    <ion-item href="#" class="activated">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-col size="6">
+        <ion-label>id : {{item.id}}</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Nom : {{item.nom}}</ion-label>
+      </ion-col>
+    </ion-item>
+  </ion-card>
+  <ion-label padding>{{item.description}}</ion-label>
+  <ion-row>
+    <ion-col text-center>
+      <ion-button color="medium" (click)="return()">Return</ion-button>
+    </ion-col>
+    <ion-col text-center>
+      <ion-button color="success" (click)="addProduit(item)">Add</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

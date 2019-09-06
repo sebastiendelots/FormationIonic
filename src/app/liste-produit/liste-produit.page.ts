@@ -1,6 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { DataService } from '../service/data.service';
-import { Produit } from '../model/produit';
+import { Component, OnInit, Output } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-liste-produit',
@@ -11,44 +10,51 @@ export class ListeProduitPage implements OnInit {
 
   listProduit = [
     {
-      produit : "ballon",
+      id: 0,
+      produit: "ballon",
       categorie: "sports"
     },
     {
-      produit : "t-shirt",
+      id: 1,
+      produit: "t-shirt",
       categorie: "sports"
     },
     {
-      produit : "short",
+      id: 2,
+      produit: "short",
       categorie: "sports"
     },
     {
-      produit : "moteur",
+      id: 3,
+      produit: "moteur",
       categorie: "bateau"
     },
     {
-      produit : "scie",
+      id: 4,
+      produit: "scie",
       categorie: "bricolage"
     },
     {
-      produit : "tronçonneuse",
+      id: 5,
+      produit: "tronçonneuse",
       categorie: "bricolage"
     }
   ]
 
-  @Output()  
-  categorieToDisplay: EventEmitter<String> = new EventEmitter()
+  @Output()
+  categorieToDisplay = "Toutes";
 
-  constructor(private dataService: DataService) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
-  addProduit(item: any) {
-    const produit = new Produit();
-    produit.categorie = item.categorie;
-    produit.nom = item.produit;
-    this.dataService.postProduit(produit).subscribe();
+  categorieChangedHandler(categorie: string) {
+    this.categorieToDisplay = categorie;
+  }
+
+  gotToProduit(id: string) {
+    this.navCtrl.navigateForward("/liste-produit/produit/" + id);
   }
 
 }

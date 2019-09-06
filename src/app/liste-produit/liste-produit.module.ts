@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ListeProduitPage } from './liste-produit.page';
 import { ProduitComponent } from './produit/produit.component';
+import { CategorieTabComponent } from './categorie-tab/categorie-tab.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
     component: ListeProduitPage
   },
   {
-    path: '/produit/{id}',
+    path: 'produit/:id',
     component: ProduitComponent
   }
 ];
@@ -28,7 +29,8 @@ const routes: Routes = [
   ],
   declarations: [
     ListeProduitPage,
-    ProduitComponent
+    ProduitComponent,
+    CategorieTabComponent
   ]
 })
 export class ListeProduitPageModule {}
