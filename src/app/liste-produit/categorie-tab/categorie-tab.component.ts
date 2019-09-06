@@ -23,7 +23,7 @@ export class CategorieTabComponent implements OnInit {
       icon: "boat"
     },
     {
-      libelle: "Toutes",
+      libelle: "toutes",
       icon: "wifi"
     }
   ]
