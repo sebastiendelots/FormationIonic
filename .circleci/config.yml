@@ -2,15 +2,15 @@
 jobs: 
   build: 
     docker: 
-      - image: "retengr/opt-ionic:1.0.1"
+      - image: "retengr/opt-ionic:1.0.2"
     environment: 
       JVM_OPTS: "-Xmx3200m"
     steps: 
       - checkout
       - run: 
           command: |
+              ionic cordova platform add android --noresources 
               yarn install
-              ionic cordova platform add android --noresources
               ionic config set -g telemetry true
           name: "Install Cordova plugins and add android platform"
       - run: 
